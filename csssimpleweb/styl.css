@@ -1,0 +1,265 @@
+:root {
+  --background-color: #fff;
+  --text-color: #000;
+  --accent-color: #007acc;
+  --accent-hover-color: #005bb5;
+  --accent-active-color: #003f87;
+  --border-color: #e0e0e0;
+}
+
+[data-theme='dark'] {
+  --background-color: #121212;
+  --text-color: #e0e0e0;
+  --accent-color: #bb86fc;
+  --accent-hover-color: #9f63d6;
+  --accent-active-color: #7e3eb0;
+  --border-color: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Image Styling */
+img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+/* Link Styling */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Page Layout */
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 30%;
+  padding: 2rem 1rem;
+  background: var(--background-color);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0;
+  text-align: center;
+}
+
+.sidebar nav ul li a {
+  padding: 0.3rem;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: var(--accent-hover-color);
+  color: #fff;
+  border-radius: 4px;
+}
+
+.sidebar-section {
+  width: 100%;
+  padding: 1rem 0;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Remove border from the first sidebar section */
+.sidebar-section:first-of-type {
+  border-top: none;
+}
+.sidebar-section ul {
+  padding-left: 1rem;
+}
+
+.sidebar-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar-section blockquote {
+  font-style: italic;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border-color);
+  color: #555;
+}
+
+.sidebar footer {
+  text-align: center;
+  font-size: 0.85rem;
+  margin-top: auto;
+  padding: 1rem 0;
+  color: var(--text-color);
+}
+
+/* Main Content */
+main {
+  width: 70%;
+  padding: 2rem;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 1rem auto 1.5rem auto;
+}
+
+/* 3 Column Section */
+.flex-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.flex-wrapper section {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--background-color);
+}
+.projects ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.projects li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Remove border from last item */
+.projects li:last-child {
+  border-bottom: none;
+}
+
+
+/* Split inside Work Experience */
+.work-experience .open-source {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.work-experience .open-source h4 {
+  margin-bottom: 0.5rem;
+}
+
+/* Feedback Section */
+.feedback-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-bottom: 2rem;
+}
+
+.feedback-wrapper h3 {
+  width: 100%;
+  text-align: center;
+}
+
+.feedback-wrapper blockquote {
+  background: var(--background-color);
+  border: 1px solid var(--accent-color);
+  padding: 1rem;
+  border-radius: 12px;
+  width: 30%;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.feedback-wrapper blockquote footer {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  main {
+    width: 100%;
+  }
+
+  .flex-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .feedback-wrapper blockquote {
+    width: 90%;
+  }
+  .sidebar-projects {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-projects li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Optional: remove line from last item */
+.sidebar-projects li:last-child {
+  border-bottom: none;
+}
+
+}
